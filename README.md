@@ -71,16 +71,12 @@ Equinox ships its own `gtk.css`, `shell.toml` and `btop.theme`, replacing Omarch
 
 ## Apps outside Omarchy's theming
 
-Each reads its own user-level config. Install the hook once; it links fastfetch
-and lazygit only while the active theme ships the file, removes the links when
-it does not, and copies and enables Vencord's sheet (restart Discord/Vesktop):
-
-```bash
-mkdir -p ~/.config/omarchy/hooks/theme-set.d
-cp ~/.config/omarchy/themes/equinox/hooks/theme-set.d/40-equinox-apps ~/.config/omarchy/hooks/theme-set.d/
-```
-
-The manual equivalents:
+Each reads its own user-level config. Omarchy's standard theme-set hooks pick
+them up from the active theme: `30-fastfetch` links `fastfetch.jsonc`,
+`40-app-configs` links `lazygit.yml`, and `50-vencord` copies
+`vencord.theme.css` to `~/.config/Vencord/themes/omarchy.theme.css`. The theme
+ships no hook or script. If those standard hooks are not installed, the
+equivalents are:
 
 ```bash
 # lazygit
@@ -89,8 +85,8 @@ mkdir -p ~/.config/lazygit && ln -sfn ~/.local/state/omarchy/current/theme/lazyg
 # fastfetch
 mkdir -p ~/.config/fastfetch && ln -sfn ~/.local/state/omarchy/current/theme/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 
-# Vencord / Vesktop: the hook copies and enables it; restart the app
-cp ~/.local/state/omarchy/current/theme/vencord.theme.css ~/.config/Vencord/themes/equinox.theme.css
+# Vencord / Vesktop: copy the sheet; restart the app
+cp ~/.local/state/omarchy/current/theme/vencord.theme.css ~/.config/Vencord/themes/omarchy.theme.css
 ```
 
 Steam and Firefox-derived browsers are not covered: neither exposes a palette hook a theme can write.
