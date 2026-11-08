@@ -73,7 +73,7 @@ Equinox ships its own `gtk.css`, `shell.toml` and `btop.theme`, replacing Omarch
 
 Each reads its own user-level config. Install the hook once; it links fastfetch
 and lazygit only while the active theme ships the file, removes the links when
-it does not, and copies Vencord's sheet:
+it does not, and copies and enables Vencord's sheet (restart Discord/Vesktop):
 
 ```bash
 mkdir -p ~/.config/omarchy/hooks/theme-set.d
@@ -89,7 +89,7 @@ mkdir -p ~/.config/lazygit && ln -sfn ~/.local/state/omarchy/current/theme/lazyg
 # fastfetch
 mkdir -p ~/.config/fastfetch && ln -sfn ~/.local/state/omarchy/current/theme/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 
-# Vencord / Vesktop: the hook copies it; enable equinox.theme.css in settings
+# Vencord / Vesktop: the hook copies and enables it; restart the app
 cp ~/.local/state/omarchy/current/theme/vencord.theme.css ~/.config/Vencord/themes/equinox.theme.css
 ```
 
