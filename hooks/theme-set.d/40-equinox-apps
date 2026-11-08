@@ -1,0 +1,23 @@
+#!/bin/bash
+# Equinox app configs: link only while the active theme ships the file.
+set -u
+
+theme_dir="$HOME/.local/state/omarchy/current/theme"
+
+link_file() {
+  local name="$1" dest="$2"
+  if [ -f "$theme_dir/$name" ]; then
+    mkdir -p "${dest%/*}"
+    ln -sfn "$theme_dir/$name" "$dest"
+  elif [ -L "$dest" ] && [ ! -e "$dest" ]; then
+    rm -f "$dest"
+  fi
+}
+
+link_file fastfetch.jsonc "$HOME/.config/fastfetch/config.jsonc"
+link_file lazygit.yml "$HOME/.config/lazygit/config.yml"
+
+if [ -f "$theme_dir/vencord.theme.css" ]; then
+  mkdir -p "$HOME/.config/Vencord/themes"
+  cp "$theme_dir/vencord.theme.css" "$HOME/.config/Vencord/themes/equinox.theme.css"
+fi

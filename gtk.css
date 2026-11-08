@@ -5,10 +5,11 @@
 
 @define-color background     #2B3A2A;
 @define-color background_dim #212E20;
+@define-color lighter_background #305134;
 @define-color background_deep #182417;
 @define-color foreground     #F5E1B8;
-@define-color foreground_dim #839D5C;
-@define-color black          #1C2A1E;
+@define-color foreground_dim #94B06A;
+@define-color black          #182417;
 @define-color red            #F67D72;
 @define-color green          #B5D28E;
 @define-color yellow         #E8C87E;
@@ -22,6 +23,7 @@
 @define-color bright_cyan    #C5E9CB;
 @define-color bright_blue    #FCE4BF;
 @define-color accent         #E8B04A;
+@define-color selection_bg   #2E5B34;
 
 @define-color accent_bg_color  @accent;
 @define-color accent_fg_color  @background_deep;
@@ -39,7 +41,7 @@
 @define-color headerbar_shade_color    alpha(@background_deep, 0.85);
 @define-color headerbar_border_color   alpha(@accent, 0.35);
 
-@define-color card_bg_color   @background_dim;
+@define-color card_bg_color   @lighter_background;
 @define-color card_fg_color   @foreground;
 @define-color card_shade_color alpha(@background_deep, 0.9);
 
@@ -71,6 +73,27 @@
 @define-color unfocused_borders  alpha(@foreground, 0.08);
 @define-color insensitive_bg_color @background_dim;
 @define-color insensitive_fg_color @foreground_dim;
+
+/* GTK 3 and plain GTK 4 read these legacy names from Adwaita's built-in
+   sheet; libadwaita's sheet never defines them. Keep them in lockstep. */
+@define-color theme_bg_color @background;
+@define-color theme_fg_color @foreground;
+@define-color theme_base_color @black;
+@define-color theme_text_color @foreground;
+@define-color theme_selected_bg_color @selection_bg;
+@define-color theme_selected_fg_color @foreground;
+@define-color theme_unfocused_bg_color @background;
+@define-color theme_unfocused_fg_color @foreground_dim;
+@define-color theme_unfocused_base_color @black;
+@define-color theme_unfocused_text_color @foreground_dim;
+@define-color theme_unfocused_selected_bg_color @selection_bg;
+@define-color theme_unfocused_selected_fg_color @foreground;
+@define-color insensitive_base_color @black;
+@define-color unfocused_insensitive_color alpha(@foreground_dim, 0.55);
+@define-color content_view_bg @black;
+@define-color text_view_bg @black;
+@define-color shade_color alpha(@background_deep, 0.85);
+@define-color scrollbar_outline_color alpha(@background, 0.90);
 
 /* Typography ------------------------------------------------------------- */
 
@@ -149,7 +172,7 @@ button:focus-visible {
 }
 
 button:disabled {
-  background-color: transparent;
+  background-color: @lighter_background;
   border-color: alpha(@foreground, 0.08);
   color: @insensitive_fg_color;
 }
@@ -207,6 +230,7 @@ label.dim-label,
 .subtitle,
 .dim-label {
   color: @foreground_dim;
+  opacity: 1;
 }
 
 /* colors.toml's selection role: military green with wheat on it. The bright
@@ -388,7 +412,7 @@ list.sidebar row:hover {
 
 .navigation-sidebar > row:selected,
 list.sidebar row:selected {
-  background-color: alpha(@accent, 0.16);
+  background-color: @selection_bg;
   box-shadow: inset 2px 0 0 @accent;
   color: @white;
 }
@@ -421,4 +445,53 @@ separator {
 
 windowcontrols button {
   border-radius: 6px;
+}
+
+/* Base surfaces for plain GTK 3 and GTK 4. Adwaita's built-in sheet never
+   reads libadwaita's window_bg_color/view_bg_color, so name the surfaces. */
+window,
+window.background,
+.background,
+dialog,
+messagedialog {
+  background-color: @background;
+  color: @foreground;
+}
+
+.view,
+textview text,
+list.view,
+iconview,
+scrolledwindow viewport {
+  background-color: @black;
+  color: @foreground;
+}
+
+list,
+list > row,
+gridview,
+columnview {
+  background-color: transparent;
+  color: @foreground;
+}
+
+list > row:hover,
+row:hover {
+  background-color: @lighter_background;
+}
+
+list > row:selected,
+row:selected,
+treeview.view:selected,
+columnview > listview > row:selected {
+  background-color: @selection_bg;
+  color: @foreground;
+}
+
+.sidebar,
+.navigation-sidebar,
+placessidebar,
+list.sidebar {
+  background-color: @background_dim;
+  color: @foreground;
 }
