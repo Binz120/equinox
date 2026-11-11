@@ -2,6 +2,8 @@
 
 An Omarchy theme for autumn: a dark onyx-green field, wheat light, brass for focus, and vermillon red kept for errors and the active window border. Five autumn wallpapers, each with a matching intro clip that resolves to its still.
 
+![Equinox: four tiled terminals over the Nagano wallpaper](preview-busy.webp)
+![Equinox: editor, Flea and a bonsai pane](preview-work.webp)
 ![Equinox: editor and file manager over the Nagano wallpaper](preview.webp)
 
 ## Install
@@ -64,7 +66,7 @@ Omarchy renders it into the compositor config at staging, so the border cannot d
 | `vencord.theme.css` | Vencord / Vesktop theme. |
 | `icons.theme` | `Yaru-sage-dark`. |
 | `backgrounds/` | Five stills plus an intro clip each. |
-| `preview.webp`, `preview-clean.webp` | The work screen and the clean desktop, 1920x1080 lossless. |
+| `preview.webp`, `preview-busy.webp`, `preview-work.webp`, `preview-clean.webp` | Desktop, tiled terminals, editor side, clean, 1920x1080 WebP. |
 | `fonts/` | Lora Regular and Italic (SIL OFL 1.1); install to `~/.local/share/fonts`. |
 
 Equinox ships its own `gtk.css`, `shell.toml` and `btop.theme`, replacing Omarchy's generated ones, and skips `chromium.theme` because the generated file is identical.
