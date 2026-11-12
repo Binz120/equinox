@@ -97,13 +97,13 @@ Steam and Firefox-derived browsers are not covered: neither exposes a palette ho
 
 | File | Scene | Photographer |
 |---|---|---|
-| `nagano-village.webp` | Nagano valley, footbridge over a ravine, gold slopes | Marcel Bisig |
-| `forest-road.webp` | Single-lane road under yellow maple | Angelika Stephan |
-| `misty-tulips.webp` | Groningen tulip fields at sunrise, fog in the furrows | René de Vries |
-| `edale-valley.webp` | Misty morning track through Edale | Andy Gray |
-| `seiganto-ji.webp` | Pagoda at Seiganto-ji, waterfall and autumn mountains | Alex Mesmer |
+| `1-nagano-village.webp` | Nagano valley, footbridge over a ravine, gold slopes | Marcel Bisig |
+| `2-edale-valley.webp` | Misty morning track through Edale | Andy Gray |
+| `3-forest-road.webp` | Single-lane road under yellow maple | Angelika Stephan |
+| `4-misty-tulips.webp` | Groningen tulip fields at sunrise, fog in the furrows | René de Vries |
+| `5-seiganto-ji.webp` | Pagoda at Seiganto-ji, waterfall and autumn mountains | Alex Mesmer |
 
-Default is `edale-valley.webp`, the alphabetically first still. The previews use `nagano-village.webp`. Each still has `intros/<name>.mp4`: 5.4s, silent, starting 6% tighter and drifting from the upper left back to the exact framing; the last frame is the still.
+The number is the sort order the picker and `omarchy theme bg next` walk, so `1-nagano-village.webp` is the default: a fresh install opens on the Nagano valley, which is also the wallpaper in every preview. Each still has `intros/<same-name>.mp4`: 5.4s, silent, starting 6% tighter and drifting from the upper left back to the exact framing; the last frame is the still.
 
 Photo sources: [yqvj5g](https://wallhaven.cc/w/yqvj5g), [5y3721](https://wallhaven.cc/w/5y3721), [vpdmll](https://wallhaven.cc/w/vpdmll), [3q5mx9](https://wallhaven.cc/w/3q5mx9), [w5x99p](https://wallhaven.cc/w/w5x99p), in table order.
 
