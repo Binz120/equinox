@@ -61,8 +61,8 @@ bright_cyan = "#C5E9CB"           # Military Green L 0.90
 bright_blue = "#FCE4BF"           # Honey L 0.93: operators
 bright_magenta = "#FEF2D9"        # Wheat L 0.965: keywords, white-hot
 
-# Anchors that the shipped app configs use directly (btop gradients).
-olive = "#6E8B3D"
-caramel = "#C9A13B"
-wheat = "#F2D49B"
-black_of_jay = "#3D2B1F"
+# The four anchors above that no template reads (olive 6E8B3D, caramel C9A13B,
+# wheat F2D49B, black of jay 3D2B1F) are documented in the anchor map at the top
+# and used as literals by the shipped btop.theme; they are not palette keys, so
+# they are not repeated here where Omarchy would ignore them.
+
